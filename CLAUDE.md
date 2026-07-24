@@ -43,6 +43,7 @@ As you explore, focus on:
 - When adding implementations, include brief comments explaining which conceptual pattern it demonstrates
 - Track assumptions and constraints discovered during exploration – these often become important design decisions
 - **Diagrams:** Use Mermaid for all diagrams and flowcharts. Do not use ASCII boxes, text-based diagrams, or text arrows (→, ▼, ↓, etc.) – Mermaid provides clearer, more professional visualizations for all visual representations
+- **Documentation Index:** All docs in `docs/` must be linked and organized in the root `README.md` as a **bullet list** (not numbered) – this serves as the entry point and navigation structure for the learning path
 
 ## No Build/Test Infrastructure Yet
 
