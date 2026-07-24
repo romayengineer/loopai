@@ -15,7 +15,7 @@ This repository is a learning project focused on understanding and documenting A
 The repository is organized into learning phases:
 
 - **`docs/`** – Conceptual documentation on AI agents, loops, and workflows. Start here for theoretical understanding.
-- **`examples/`** – Working code examples demonstrating specific patterns (single agents, loops, multi-agent workflows).
+- **`examples/example-folder/`** – Working code examples demonstrating specific patterns (single agents, loops, multi-agent workflows). Each example lives in its own subfolder.
 - **`experiments/`** – Sandbox for trying new approaches and testing ideas before formalizing them.
 - **`references/`** – Links, summaries, and notes from external resources.
 
