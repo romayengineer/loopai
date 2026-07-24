@@ -10,8 +10,8 @@ A learning repository focused on understanding and implementing AI agents, agent
 - *[Tool Design for Agents](docs/03-tool-design.md)* – Coming soon
 - *[Multi-Agent Systems](docs/04-multi-agent-systems.md)* – Coming soon
 
-### Implementation Guides
-- *Examples and working code samples coming soon*
+### Examples & Implementation Guides
+- [Minimal Agent Loop with LangChain](examples/minimal-agent-loop.md) – The simplest working agent loop (50 lines of code)
 
 ### Experiments
 - *Sandbox for testing new ideas coming soon*
