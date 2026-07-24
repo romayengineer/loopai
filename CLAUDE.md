@@ -42,6 +42,7 @@ As you explore, focus on:
 - Use clear naming conventions: use `agent-` prefix for agent-focused code, `loop-` for loop patterns, `workflow-` for orchestration examples
 - When adding implementations, include brief comments explaining which conceptual pattern it demonstrates
 - Track assumptions and constraints discovered during exploration – these often become important design decisions
+- **Diagrams:** Use Mermaid for all diagrams and flowcharts. Do not use ASCII boxes, text-based diagrams, or text arrows (→, ▼, ↓, etc.) – Mermaid provides clearer, more professional visualizations for all visual representations
 
 ## No Build/Test Infrastructure Yet
 
