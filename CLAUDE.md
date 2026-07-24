@@ -45,6 +45,7 @@ As you explore, focus on:
 - **Diagrams:** Use Mermaid for all diagrams and flowcharts. Do not use ASCII boxes, text-based diagrams, or text arrows (→, ▼, ↓, etc.) – Mermaid provides clearer, more professional visualizations for all visual representations
 - **Documentation Index:** All docs in `docs/` must be linked and organized in the root `README.md` as a **bullet list** (not numbered) – this serves as the entry point and navigation structure for the learning path
 - **File Naming:** All files (docs, examples, code) must start with letters, not numbers – use names like `basic-agent-loop.py` not `01-agent-loop.py`
+- **Model Selection in Examples:** Always use the smallest and cheapest model possible (Anthropic: Haiku, OpenAI: GPT-4o mini, etc.). This keeps costs low for users experimenting with examples and iteration fast during development
 
 ## No Build/Test Infrastructure Yet
 

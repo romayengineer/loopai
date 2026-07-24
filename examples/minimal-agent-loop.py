@@ -16,8 +16,8 @@ from langchain_anthropic import ChatAnthropic
 from langchain.agents import tool, AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-# Initialize the LLM
-llm = ChatAnthropic(model="claude-3-5-sonnet-20241022", temperature=0)
+# Initialize the LLM (using Haiku - smallest and cheapest model)
+llm = ChatAnthropic(model="claude-3-5-haiku-20241022", temperature=0)
 
 # Define a simple tool
 @tool

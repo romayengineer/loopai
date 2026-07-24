@@ -22,9 +22,9 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 Import LangChain components for agents, tools, and prompts.
 
 ```python
-llm = ChatAnthropic(model="claude-3-5-sonnet-20241022", temperature=0)
+llm = ChatAnthropic(model="claude-3-5-haiku-20241022", temperature=0)
 ```
-Initialize Claude. (Alternative: `ChatOpenAI(model="gpt-4")`)
+Initialize Claude Haiku (the smallest and cheapest model). This keeps costs low for experimentation. Alternative: `ChatOpenAI(model="gpt-4o-mini")`
 
 ```python
 @tool
