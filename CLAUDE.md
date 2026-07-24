@@ -47,6 +47,7 @@ As you explore, focus on:
 - **File Naming:** All files (docs, examples, code) must start with letters, not numbers – use names like `basic-agent-loop.py` not `01-agent-loop.py`
 - **Model Selection in Examples:** Always use the smallest and cheapest model possible (Anthropic: Haiku, OpenAI: GPT-4o mini, etc.). This keeps costs low for users experimenting with examples and iteration fast during development
 - **Provider for Examples:** Use OpenCode Zen as the default provider for all examples. It provides access to 50+ models (Anthropic, OpenAI, Qwen, etc.) with a single API key, making it ideal for learning and experimentation across different models
+- **Model Definition Pattern:** All models used in examples must be defined in `examples/models.py`. Each model is a function named after the model (e.g., `ModelClaudeHaiku45()`) that returns a fully configured LLM instance. This centralizes configuration and makes examples cleaner and more reusable
 
 ## No Build/Test Infrastructure Yet
 

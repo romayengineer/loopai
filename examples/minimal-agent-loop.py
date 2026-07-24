@@ -15,18 +15,14 @@ Environment:
 """
 
 from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
 from langchain_core.tools import tool
 from langchain_core.messages import HumanMessage, ToolMessage
+from models import ModelClaudeHaiku45
 
 load_dotenv()
 
 # Initialize the LLM (using Haiku 4.5 via OpenCode Zen - 50+ models with one API key)
-llm = ChatAnthropic(
-    model="claude-haiku-4-5",
-    temperature=0,
-    anthropic_api_url="https://opencode.ai/zen"
-)
+llm = ModelClaudeHaiku45()
 
 # Define simple tools
 @tool
