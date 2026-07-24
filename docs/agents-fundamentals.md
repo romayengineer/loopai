@@ -180,4 +180,4 @@ The remaining concepts in this learning path build on this foundation:
 
 ---
 
-**Next:** [Agentic Loops: Building Reliable Autonomous Systems](02-agentic-loops.md)
+**Next:** [Agentic Loops: Building Reliable Autonomous Systems](agentic-loops.md)

@@ -5,10 +5,10 @@ A learning repository focused on understanding and implementing AI agents, agent
 ## Documentation
 
 ### Foundational Concepts
-- [AI Agents: Fundamentals](docs/01-ai-agents-fundamentals.md) – What is an AI agent? Core components, the agentic loop, and key characteristics
-- *[Agentic Loops: Building Reliable Autonomous Systems](docs/02-agentic-loops.md)* – Coming soon
-- *[Tool Design for Agents](docs/03-tool-design.md)* – Coming soon
-- *[Multi-Agent Systems](docs/04-multi-agent-systems.md)* – Coming soon
+- [AI Agents: Fundamentals](docs/agents-fundamentals.md) – What is an AI agent? Core components, the agentic loop, and key characteristics
+- *[Agentic Loops: Building Reliable Autonomous Systems](docs/agentic-loops.md)* – Coming soon
+- *[Tool Design for Agents](docs/tool-design.md)* – Coming soon
+- *[Multi-Agent Systems](docs/multi-agent-systems.md)* – Coming soon
 
 ### Examples & Implementation Guides
 - [Minimal Agent Loop with LangChain](examples/minimal-agent-loop.md) – The simplest working agent loop (50 lines of code)
