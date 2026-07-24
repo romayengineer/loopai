@@ -6,10 +6,18 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
+	"github.com/joho/godotenv"
 	"github.com/tmc/langchaingo/llms"
 	"github.com/tmc/langchaingo/llms/anthropic"
 )
+
+func init() {
+	if err := godotenv.Load(); err != nil && !os.IsNotExist(err) {
+		log.Fatalf("error loading .env file: %v", err)
+	}
+}
 
 func main() {
 	apiKey := os.Getenv("ANTHROPIC_API_KEY")
@@ -18,8 +26,9 @@ func main() {
 	}
 
 	llm, err := anthropic.New(
-		anthropic.WithModel("claude-haiku-4.5-20241022"),
+		anthropic.WithModel("claude-haiku-4-5"),
 		anthropic.WithToken(apiKey),
+		anthropic.WithBaseURL("https://opencode.ai/zen/v1"),
 	)
 	if err != nil {
 		log.Fatal(err)
@@ -77,24 +86,38 @@ func main() {
 			log.Fatal("no response from LLM")
 		}
 
-		choice := response.Choices[0]
+		// Aggregate text and tool calls across all content choices
+		// (Anthropic returns text + tool_use as separate choices)
+		var textParts []string
+		var toolCalls []llms.ToolCall
+		for _, choice := range response.Choices {
+			if choice.Content != "" {
+				textParts = append(textParts, choice.Content)
+			}
+			toolCalls = append(toolCalls, choice.ToolCalls...)
+		}
 
-		// Build AI response message with text + tool calls as parts
-		aiParts := []llms.ContentPart{llms.TextContent{Text: choice.Content}}
-		for _, tc := range choice.ToolCalls {
-			aiParts = append(aiParts, tc)
+		if len(toolCalls) == 0 {
+			answer := strings.Join(textParts, "\n")
+			fmt.Printf("\nFinal Answer: %s\n", answer)
+			messages = append(messages, llms.TextParts(llms.ChatMessageTypeAI, answer))
+			return
+		}
+
+		if text := strings.Join(textParts, "\n"); text != "" {
+			fmt.Println(text)
+		}
+
+		aiParts := make([]llms.ContentPart, len(toolCalls))
+		for i, tc := range toolCalls {
+			aiParts[i] = tc
 		}
 		messages = append(messages, llms.MessageContent{
 			Role:  llms.ChatMessageTypeAI,
 			Parts: aiParts,
 		})
 
-		if len(choice.ToolCalls) == 0 {
-			fmt.Printf("\nFinal Answer: %s\n", choice.Content)
-			return
-		}
-
-		for _, tc := range choice.ToolCalls {
+		for _, tc := range toolCalls {
 			var args map[string]any
 			if err := json.Unmarshal([]byte(tc.FunctionCall.Arguments), &args); err != nil {
 				log.Fatalf("failed to parse args: %v", err)

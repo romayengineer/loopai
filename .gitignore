@@ -1,3 +1,6 @@
+# binaries
+main
+
 # Environment
 .env
 .env.local
