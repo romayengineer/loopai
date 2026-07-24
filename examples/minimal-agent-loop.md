@@ -22,9 +22,13 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 Import LangChain components for agents, tools, and prompts.
 
 ```python
-llm = ChatAnthropic(model="claude-3-5-haiku-20241022", temperature=0)
+llm = ChatAnthropic(
+    model="claude-haiku-4-5",
+    temperature=0,
+    anthropic_api_url="https://opencode.ai/zen/v1"
+)
 ```
-Initialize Claude Haiku (the smallest and cheapest model). This keeps costs low for experimentation. Alternative: `ChatOpenAI(model="gpt-4o-mini")`
+Initialize Claude Haiku 4.5 via OpenCode Zen. OpenCode Zen provides access to 50+ models (Anthropic, OpenAI, Qwen, etc.) with a single API key, making it ideal for learning and experimenting with different models.
 
 ```python
 @tool
@@ -52,10 +56,10 @@ Run the agent loop. It will:
 
 ```bash
 # Install dependencies
-pip install langchain langchain-anthropic anthropic
+pip install langchain langchain-anthropic anthropic python-dotenv
 
-# Set your API key
-export ANTHROPIC_API_KEY="your-key-here"
+# Create a .env file
+echo 'ANTHROPIC_API_KEY="your-zen-api-key-here"' > .env
 
 # Run
 python minimal-agent-loop.py

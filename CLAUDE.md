@@ -46,6 +46,7 @@ As you explore, focus on:
 - **Documentation Index:** All docs in `docs/` must be linked and organized in the root `README.md` as a **bullet list** (not numbered) – this serves as the entry point and navigation structure for the learning path
 - **File Naming:** All files (docs, examples, code) must start with letters, not numbers – use names like `basic-agent-loop.py` not `01-agent-loop.py`
 - **Model Selection in Examples:** Always use the smallest and cheapest model possible (Anthropic: Haiku, OpenAI: GPT-4o mini, etc.). This keeps costs low for users experimenting with examples and iteration fast during development
+- **Provider for Examples:** Use OpenCode Zen as the default provider for all examples. It provides access to 50+ models (Anthropic, OpenAI, Qwen, etc.) with a single API key, making it ideal for learning and experimentation across different models
 
 ## No Build/Test Infrastructure Yet
 
