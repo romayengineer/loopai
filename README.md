@@ -17,7 +17,7 @@ A learning repository focused on understanding and implementing AI agents, agent
 - *Sandbox for testing new ideas coming soon*
 
 ### References
-- *External resources and references coming soon*
+- [Tools, Frameworks, and Languages for Building AI Agents](docs/reference-tools-frameworks.md) – Survey of LLM providers, agent frameworks, programming languages, and supporting tools
 
 ## Getting Started
 
