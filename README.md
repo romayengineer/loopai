@@ -13,6 +13,9 @@ A learning repository focused on understanding and implementing AI agents, agent
 ### Examples & Implementation Guides
 - [Minimal Agent Loop with LangChain](examples/minimal-agent-loop.md) – The simplest working agent loop (50 lines of code)
 
+### Tools & Infrastructure
+- [Workflow Controller](workflow-controller/README.md) – Agent-agnostic multi-agent orchestrator. Control any AI agent (Claude Code, OpenCode, custom) via a language-agnostic protocol with rule-based + LLM-powered decision making.
+
 ### Experiments
 - *Sandbox for testing new ideas coming soon*
 
